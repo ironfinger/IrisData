@@ -26,13 +26,8 @@ def get_data():
         new_column = df[col].tolist()
         data_dict[col] = new_column
         
-        
-    data_dict['ColumnNames'] = columns.tolist()
-    
-   
-    
-   
-    
+    column_names = columns.tolist()
+    data_dict['ColumnNames'] = column_names[1:]
     
     return {'data': data_dict }
     
