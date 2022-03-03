@@ -30,17 +30,13 @@ class App extends Component {
 			this.setState({
 				dataPresent: true,
 				data: data["data"]
-			})
-
-			console.log('State');
-			console.log(this.state.data);
-
-		})
+			});
+		});
 	}
 
 	whatToRender() {
-		if (this.state.dataPresent == true) {
-			return <DataView />
+		if (this.state.dataPresent === true) {
+			return <DataView data={this.state.data} />
 		} else {
 			return <h1>no data</h1>
 		}
