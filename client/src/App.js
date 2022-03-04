@@ -3,6 +3,8 @@ import { React, Component } from 'react';
 
 // Import my components:
 import DataView from './components/DataView';
+import ColumnView from './components/ColumnView';
+import DataViewV2 from './components/DataViewV2';
 
 // Import React Bootstrap Components:
 import Navbar from 'react-bootstrap/Navbar';
@@ -38,7 +40,14 @@ class App extends Component {
 
 	whatToRender() {
 		if (this.state.dataPresent === true) {
-			return <DataView data={this.state.data} />
+			return (<>
+				<ColumnView data={this.state.data}/>
+				<DataViewV2 data={this.state.data} usrColumns={[
+					"Name",
+					"Type",
+					"Consistent"
+				]} />
+			</>)
 		} else {
 			return <h1>no data</h1>
 		}
@@ -50,8 +59,6 @@ class App extends Component {
 			<Navbar bg="dark" variant="dark">
 				<Navbar.Brand href="#">Brand link</Navbar.Brand>
 			</Navbar>
-
-			<h1>Hello</h1>
 			
 			{
 				this.whatToRender()
