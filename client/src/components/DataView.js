@@ -9,7 +9,7 @@ import Table from 'react-bootstrap/Table';
 class DataView extends Component {
     constructor(props) {
         super(props)
-        
+
         console.log('Data View');
         console.log(props.data);
     }
@@ -22,14 +22,18 @@ class DataView extends Component {
         for (let i = 0; i <= columns.length - 1; i++) {
             let columnName = columns[i]
             let columnData = this.props.data[columnName]
-
-            console.log(`Column Name: ${columnName}`)
-            console.log(`Column Data: ${columnData}`)
-            console.log(`Data at Row: ${columnData[index]}`)
-            console.log(`Index: ${index}`)
             
+            let dataPush = null; // This will hold the value of what we want to view.
+            if (columnData[index] == false) {
+				dataPush = 'false';
+            } else if (columnData[index] == true) {
+				dataPush = 'true';
+			} else {
+				dataPush = columnData[index]
+			}
 
-            rowArr.push(columnData[index]);
+
+            rowArr.push(dataPush);
         }
 
         return (

@@ -4,7 +4,9 @@ import { React, Component } from 'react';
 // Import my components:
 import DataView from './components/DataView';
 
-import Table from 'react-bootstrap/Table';
+// Import React Bootstrap Components:
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
 
 class App extends Component {
 
@@ -44,6 +46,10 @@ class App extends Component {
 
 	render() {
 		return (<>
+			
+			<Navbar bg="dark" variant="dark">
+				<Navbar.Brand href="#">Brand link</Navbar.Brand>
+			</Navbar>
 
 			<h1>Hello</h1>
 			
